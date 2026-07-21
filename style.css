@@ -295,6 +295,16 @@ fieldset.form-group {
     font-weight: 500;
 }
 
+.form-status {
+    margin-top: var(--space-sm);
+    font-family: var(--font-heading);
+    color: var(--forest);
+}
+
+.form-status.is-success {
+    color: var(--forest);
+}
+
 input,
 textarea {
     font: inherit;

@@ -4,16 +4,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector(".rsvp-form");
   const iframe = document.querySelector('iframe[name="hidden_iframe"]');
   const submitButton = form?.querySelector('button[type="submit"]');
+  const status = document.getElementById("rsvp-status");
 
-  if (!form || !iframe || !submitButton) return;
+  if (!form || !iframe || !submitButton || !status) return;
 
   const originalButtonText = submitButton.textContent.trim();
-  let submitted = false;
-
-  const status = document.createElement("p");
-  status.className = "form-status";
-  status.setAttribute("aria-live", "polite");
-  form.appendChild(status);
+  let pending = false;
 
   form.addEventListener("submit", () => {
     if (!form.checkValidity()) {
@@ -21,16 +17,17 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    submitted = true;
+    pending = true;
     submitButton.disabled = true;
     submitButton.textContent = "Odesílám…";
     status.textContent = "Odesílám vaše potvrzení…";
+    status.classList.remove("is-success", "is-error");
   });
 
   iframe.addEventListener("load", () => {
-    if (!submitted) return;
+    if (!pending) return;
 
-    submitted = false;
+    pending = false;
     form.reset();
     submitButton.disabled = false;
     submitButton.textContent = originalButtonText;
