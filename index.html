@@ -174,13 +174,13 @@
             <p class="intro">Budeme moc rádi, když s námi tento den prožijete. Účast prosím potvrďte do konce tohoto roku.</p>
         </div>
 
-        <form class="rsvp-form">
+        <form class="rsvp-form" action="https://script.google.com/macros/s/AKfycby7m7QDR_sa-hqVDszWVTwuxybuC4JrxDJ6GRhHrKS2HTrbvhW0bgabgAHlhUdmWXhW/exec" method="post" target="hidden_iframe">
             <div class="form-group">
                 <label for="guest-name">Jméno</label>
                 <input
                     type="text"
                     id="guest-name"
-                    name="guest_name"
+                    name="Jméno a příjmení"
                     autocomplete="name"
                     required
                 />
@@ -190,12 +190,12 @@
                 <legend>Přijdete?</legend>
 
                 <label>
-                    <input type="radio" name="attendance" value="yes" required />
+                    <input type="radio" name="Účast" value="yes" required />
                     Ano, moc rádi!
                 </label>
 
                 <label>
-                    <input type="radio" name="attendance" value="no" />
+                    <input type="radio" name="Účast" value="no" />
                     Bohužel nemůžeme.
                 </label>
             </fieldset>
@@ -205,7 +205,7 @@
                 <input
                     type="number"
                     id="guest-count"
-                    name="guest_count"
+                    name="Počet hostů"
                     min="1"
                     max="10"
                     value="1"
@@ -217,7 +217,7 @@
                 <label for="dietary">Dietní omezení</label>
                 <textarea
                     id="dietary"
-                    name="dietary"
+                    name="Dietní omezení"
                     rows="3"
                     placeholder="Např. vegetarián, bez lepku..."
                 ></textarea>
@@ -227,7 +227,7 @@
                 <label for="message">Zpráva pro novomanžele</label>
                 <textarea
                     id="message"
-                    name="message"
+                    name="Zpráva"
                     rows="4"
                     placeholder="Např. vzkaz, otázka, poznámka..."
                 ></textarea>
@@ -237,6 +237,7 @@
                 Potvrdit účast
             </button>
         </form>
+        <iframe name="hidden_iframe" style="display:none;"></iframe>
     </div>
 </section>
 
