@@ -1,42 +1,33 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("rsvp-form");
+  const form = document.querySelector(".rsvp-form");
+  const iframe = document.querySelector('iframe[name="hidden_iframe"]');
   const submitButton = form?.querySelector('button[type="submit"]');
   const status = document.getElementById("rsvp-status");
 
-  if (!form || !submitButton || !status) return;
+  if (!form || !iframe || !submitButton || !status) return;
 
-  const ENDPOINT = "https://script.google.com/macros/s/AKfycby7m7QDR_sa-hqVDszWVTwuxybuC4JrxDJ6GRhHrKS2HTrbvhW0bgabgAHlhUdmWXhW/exec";
-  const originalButtonText = submitButton.textContent.trim();
+  const originalText = submitButton.textContent.trim();
+  let submitted = false;
 
-  form.addEventListener("submit", async (event) => {
-    event.preventDefault();
-
+  form.addEventListener("submit", () => {
     if (!form.checkValidity()) {
       form.reportValidity();
       return;
     }
 
+    submitted = true;
     submitButton.disabled = true;
     submitButton.textContent = "Odesílám…";
-    status.textContent = "Odesílám vaše potvrzení…";
-    status.classList.remove("is-success", "is-error");
+    status.textContent = "Odesíláme vaše potvrzení…";
+  });
 
-    try {
-      await fetch(ENDPOINT, {
-        method: "POST",
-        body: new FormData(form),
-        mode: "no-cors",
-      });
+  iframe.addEventListener("load", () => {
+    if (!submitted) return;
 
-      form.reset();
-      status.textContent = "Děkujeme! Vaše odpověď byla uložena.";
-      status.classList.add("is-success");
-    } catch (error) {
-      status.textContent = "Omlouváme se, něco se pokazilo. Zkuste to prosím znovu.";
-      status.classList.add("is-error");
-    } finally {
-      submitButton.disabled = false;
-      submitButton.textContent = originalButtonText;
-    }
+    submitted = false;
+    form.reset();
+    submitButton.disabled = false;
+    submitButton.textContent = originalText;
+    status.textContent = "Děkujeme! Vaše odpověď byla uložena.";
   });
 });
