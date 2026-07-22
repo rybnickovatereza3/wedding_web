@@ -279,6 +279,11 @@ section {
     gap: var(--space-md);
 }
 
+
+.is-hidden {
+    display: none;
+}
+
 .form-group,
 fieldset.form-group {
     display: flex;

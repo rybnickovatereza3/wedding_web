@@ -174,7 +174,7 @@
             <p class="intro">Budeme moc rádi, když s námi tento den prožijete. Účast prosím potvrďte do konce tohoto roku.</p>
         </div>
 
-        <form class="rsvp-form" action="https://script.google.com/macros/s/AKfycby7m7QDR_sa-hqVDszWVTwuxybuC4JrxDJ6GRhHrKS2HTrbvhW0bgabgAHlhUdmWXhW/exec" method="post">
+        <form class="rsvp-form" action="https://script.google.com/macros/s/AKfycby7m7QDR_sa-hqVDszWVTwuxybuC4JrxDJ6GRhHrKS2HTrbvhW0bgabgAHlhUdmWXhW/exec" method="post" target="hidden_iframe">
             <div class="form-group">
                 <label for="guest-name">Jméno</label>
                 <input
@@ -236,8 +236,18 @@
             <button type="submit" class="button button-primary">
                 Potvrdit účast
             </button>
-            <p id="rsvp-status" class="form-status" aria-live="polite"></p>
         </form>
+
+            <p id="rsvp-status" class="form-status" aria-live="polite"></p>
+            <iframe name="hidden_iframe" style="display:none;"></iframe>
+
+                <div class="rsvp-success is-hidden">
+            ❤️
+
+            <h3>Děkujeme!</h3>
+
+            <p>Budeme se na Vás těšit.</p>
+        </div>
 
     </div>
 </section>
