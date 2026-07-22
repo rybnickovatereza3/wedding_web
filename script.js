@@ -28,12 +28,11 @@ document.addEventListener("DOMContentLoaded", () => {
     submitted = false;
     form.reset();
 
-    form.classList.add("is-hidden");
-    success.classList.remove("is-hidden");
-
     submitButton.disabled = false;
     submitButton.textContent = originalText;
     status.textContent = "";
 
+    form.classList.add("is-hidden");
+    success.classList.remove("is-hidden");
   });
 });

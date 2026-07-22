@@ -6,12 +6,13 @@
 :root {
     /* colors */
     --background: #f8f5f2;
-    --text: #333333;
+    --text: #000000;
     --sage: #9caf88;
     --forest: #4d5d47;
     --accent: #c8a97e;
     --olive: #556b2f;
     --ivory: #fffff0;
+    --lblack:#292828;
 /* sizing */
     --space-es: 0.01rem;
     --space-xxs: 0.2rem;
@@ -26,20 +27,24 @@
     --text-body: 1rem;
     --text-intro: 1.2rem;
     --text-heading: 2.2rem; 
-    --text-display: 4rem;
+    --text-display: 6rem;
 /*typography*/
-    --font-heading: Georgia, serif;
-    --font-body: Arial, Helvetica, sans-serif;
+    --font-heading: "Pinyon Script", serif;
+    --font-body: "Arvo", sans-serif;
+    --font-script: "Arvo", cursive;
 }
 
 /* Global style */
 body {
     margin: 0;
     font-family: var(--font-body);
-    background-color: var(--background);
+    background:
+    url(images/bg_paper.jpg)
+    center/cover fixed;
+    background-color: #f8f5f2;
     color:var(--text);
     text-align: center;
-    line-height: 1.6;
+    line-height: 1.75;
 }
 /* Typography */ 
 
@@ -47,8 +52,9 @@ body {
     margin-top: 0;
     font-family: var(--font-heading);
     font-size: var(--text-display);
-    font-weight: normal;
+    font-weight: 500;
     margin-bottom: var(--space-smm);
+    line-height: 1;
 }
 
 
@@ -61,7 +67,8 @@ body {
 .date {
     margin: 0;
     color: var(--text);
-    font-size: var(--text-body);
+    font-size: var(--text-heading);
+    font-family: var(--font-heading);
 }
 
 p {
@@ -69,7 +76,7 @@ p {
 }
 
 h2 {
-    font-family: var(--font-heading);
+    font-family: var(--font-script);
     font-size: var(--text-heading);
 }
 
@@ -79,7 +86,7 @@ h2 {
     display: flex;  
     flex-direction: column;                   
     justify-content: center;
-    background-color: var(--sage);
+    background: transparent;
     padding: var(--space-lg) var(--space-md);
 }
 
@@ -110,6 +117,7 @@ main section {
 .section-header h2 {
     margin-top: 0;
     margin-bottom: var(--space-sm);
+    font-weight: 500;
 }
 .section-content {
     max-width: 70ch;
@@ -129,7 +137,7 @@ main section {
 
 .section-content dt {
     font-weight: bold;
-    color: var(--forest);
+    color: var(--text);
 
 }
 
@@ -166,17 +174,17 @@ main section {
 .hero-nav a {
     display: inline-block;
     padding: 0.7rem 1.2rem;
-    border: 1px solid var(--forest);
+    border: 1px solid var(--text);
     border-radius: 999px;
     text-decoration: none;
-    color: var(--forest);
+    color: var(--lblack);
     background: transparent;
     transition: background-color 0.2s ease, color 0.2s ease;
     font-size: var(--text-body);
     letter-spacing: 0.05em;
 }
 .hero-nav a:hover {
-    background-color: var(--forest);
+    background-color: var(--text);
     color: ivory;
 }
 
@@ -185,23 +193,27 @@ main section {
     align-items: flex-start;
     gap: var(--space-sm);
     padding: var(--space-sm);
-    border: 1px solid var(--sage);
-    border-radius: 12px;
-    background-color: var(--ivory);
+    background-color: transparent;
 }
 
 .detail-icon {
-    font-size: 1.4rem;
-    line-height: 1;
-    color: var(--forest);
-    margin-top: 0.1rem;
+    width: 2rem;
+    height: 2rem;
+    color: var(--text);
+    flex-shrink: 0;
+}
+
+.detail-icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 
 .detail-label {
     margin: 0;
-    font-family: var(--font-heading);
+    font-family: var(--font-script);
     font-weight: bold;
-    color: var(--forest);
+    color: var(--text);
 }
 
 .detail-value {
@@ -241,8 +253,8 @@ main section {
 .program-time {
     margin: 0;
     font-family: var(--font-heading);
-    font-size: 1.4rem;
-    color: var(--forest);
+    font-size: 1.8rem;
+    color: var(--text);
 }
 
 .program-title,
@@ -251,14 +263,14 @@ main section {
 }
 
 .faq-item {
-    border-bottom: 1px solid var(--sage);
+    border-bottom: 1px solid var(--text);
     padding: var(--space-sm) 0;
 }
 
 .faq-item summary {
     cursor: pointer;
-    font-family: var(--font-heading);
-    color: var(--forest);
+    font-family: var(--font-body);
+    color: var(--text);
 }
 
 .faq-item p {
@@ -278,6 +290,41 @@ section {
     flex-direction: column;
     gap: var(--space-md);
 }
+.rsvp-success {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: clamp(2rem, 4vw, 3.5rem);
+    border-radius: 24px;
+    border: 1px solid rgba(77, 93, 71, 0.16);
+    background:
+        radial-gradient(circle at top left, rgba(156, 175, 136, 0.22), transparent 40%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(248, 245, 242, 0.98));
+    box-shadow: 0 24px 60px rgba(77, 93, 71, 0.12);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.rsvp-success::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent 0 70%, rgba(200, 169, 126, 0.10) 100%);
+    pointer-events: none;
+}
+.rsvp-success h3 {
+    margin: 0 0 var(--space-xs);
+    font-family: var(--font-heading);
+    font-size: var(--text-heading);
+    color: var(--text);
+}
+.rsvp-success p {
+    margin: 0;
+}
+
+.rsvp-success p + p {
+    margin-top: var(--space-sm);
+}
+
 
 
 .is-hidden {
@@ -295,26 +342,26 @@ fieldset.form-group {
 }
 
 .form-group label, fieldset legend {
-    font-family: var(--font-heading);
-    color: var(--forest);
+    font-family: var(--font-body);
+    color: var(--text);
     font-weight: 500;
 }
 
 .form-status {
     margin-top: var(--space-sm);
-    font-family: var(--font-heading);
-    color: var(--forest);
+    font-family: var(--font-body);
+    color: var(--text);
 }
 
 .form-status.is-success {
-    color: var(--forest);
+    color: var(--text);
 }
 
 input,
 textarea {
     font: inherit;
     padding: 0.85rem 1rem;
-    border: 1px solid var(--sage);
+    border: 1px solid var(--text);
     border-radius: 12px;
     background-color: var(--ivory);
     color: var(--text);
@@ -331,9 +378,9 @@ fieldset label {
 }
 
 .button-primary {
-    background-color: var(--forest);
+    background-color: var(--text);
     color: var(--ivory);
-    border-color: var(--forest);
+    border-color: var(--text);
     align-self: flex-start;
     margin-top: var(--space-sm);
 }

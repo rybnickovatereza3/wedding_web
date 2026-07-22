@@ -10,6 +10,11 @@
 
     <!-- Link to the CSS file -->
     <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Pinyon+Script&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
   </head>
 
   <body>
@@ -17,9 +22,8 @@
       <!--p as paragraph-->
       <div class="hero-content">
         <h1 class = "hero-title">Tereza & Lukáš</h1>
-        <p class="eyebrow">Vás srdečně zvou</p>
+        <p class="eyebrow">nejúžasnější svatba roku</p>
         <p class="date">19. června 2027</p>
-        <p class="eyebrow">na tu nejúžasnější svatbu roku.</p>
       </div>
               <nav class="hero-nav">
                     <a href="#story">O nás</a>
@@ -42,7 +46,9 @@
 
         <div class="detail-grid">
             <div class="detail-item">
-                <span class="detail-icon" aria-hidden="true">📅</span>
+                <div class="detail-icon" >
+                    <img src="icons/calendar-blank-light.svg" alt="calendar" aria-hidden="true">
+                </div>
                 <div class="detail-text">
                     <p class="detail-label">Datum</p>
                     <p class="detail-value">19. června 2027</p>
@@ -50,7 +56,9 @@
             </div>
 
             <div class="detail-item">
-                <span class="detail-icon" aria-hidden="true">📍</span>
+                <div class="detail-icon" aria-hidden="true">
+                    <img src="icons/map-pin-light.svg" alt="pin" aria-hidden="true">
+                </div>
                 <div class="detail-text">
                     <p class="detail-label">Místo</p>
                     <p class="detail-value">Penzion Buchlovský Dvůr</p>
@@ -58,7 +66,9 @@
             </div>
 
             <div class="detail-item">
-                <span class="detail-icon" aria-hidden="true">🕐</span>
+                <div class="detail-icon" aria-hidden="true">
+                    <img src="icons/clock-light.svg" alt="calendar" aria-hidden="true">
+                </div>
                 <div class="detail-text">
                     <p class="detail-label">Začátek obřadu</p>
                     <p class="detail-value">14:00</p>
@@ -111,7 +121,7 @@
     <div class="program-list">
       <div class="program-item">
         <div class="program-icon">
-          <img src="images/car.png" alt="" aria-hidden="true">
+          <img src="icons/car-light.svg" alt="" aria-hidden="true">
         </div>
         <div class="program-content">
           <p class="program-time">13:00</p>
@@ -165,6 +175,51 @@
     </div>
   </div>
 </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+        <div class = "container">
+            <div class = "section-header">
+                <h2>Zde budou užitečné věci</h2>
+            </div>
+        <div class="section-content">
+
+            <details class="faq-item">
+
+                <summary>Jak je to s parkováním?</summary>
+
+                <p>
+                    Parkování je v omezené kapacitě možné na místě vyznačeném za penzionem. Bude-li kapacita naplněna, je možné parkovat 
+                    na parkovišti ke hradu Buchlov, které se nachází hned vedle penzionu. Parkovné je zde 50 Kč/den, je dobré na to myslet.
+                </p>
+
+            </details>
+
+            <details class="faq-item">
+
+                <summary>Co s domácími mazlíčky?</summary>
+
+                <p>
+                    Areál penzionu sdílíme s místními kachnami a slepičkami, proto bohužel není možné přivést si své mazlíčky.
+                </p>
+
+            </details>
+
+            <details class="faq-item">
+
+                <summary>Co svatební dary?</summary>
+
+                <p>
+                    Jsme vděční za Vaši přítomnost na našem velkém dni, nicméně pokud se rozhodnete pro svatební dar, uvítali bychom 
+                    finanční příspěvek. Jelikož spolu žijeme přes šest let, svatební výbavu jsme si za tu dobu nakoupili sami.
+                </p>
+
+            </details>
+
+
+        </div>
+        </div>
+    </section>
 
     <!-- RSVP -->
 <section id="rsvp">
@@ -241,61 +296,23 @@
             <p id="rsvp-status" class="form-status" aria-live="polite"></p>
             <iframe name="hidden_iframe" style="display:none;"></iframe>
 
-                <div class="rsvp-success is-hidden">
-            ❤️
+            <div class="rsvp-success is-hidden">
 
-            <h3>Děkujeme!</h3>
+                <h3>Děkujeme!</h3>
 
-            <p>Budeme se na Vás těšit.</p>
-        </div>
+                <p>
+                    Vaše účast byla úspěšně potvrzena.
+                </p>
+
+                <p>
+                    Budeme se na Vás těšit
+                    <strong>19. června 2027.</strong>
+                </p>
+
+            </div>
 
     </div>
 </section>
-
-    <!-- FAQ -->
-    <section id="faq">
-        <div class = "container">
-            <div class = "section-header">
-                <h2>Zde budou užitečné věci</h2>
-            </div>
-        <div class="section-content">
-
-            <details class="faq-item">
-
-                <summary>Jak je to s parkováním?</summary>
-
-                <p>
-                    Parkování je v omezené kapacitě možné na místě vyznačeném za penzionem. Bude-li kapacita naplněna, je možné parkovat 
-                    na parkovišti ke hradu Buchlov, které se nachází hned vedle penzionu. Parkovné je zde 50 Kč/den, je dobré na to myslet.
-                </p>
-
-            </details>
-
-            <details class="faq-item">
-
-                <summary>Co s domácími mazlíčky?</summary>
-
-                <p>
-                    Areál penzionu sdílíme s místními kachnami a slepičkami, proto bohužel není možné přivést si své mazlíčky.
-                </p>
-
-            </details>
-
-            <details class="faq-item">
-
-                <summary>Co svatební dary?</summary>
-
-                <p>
-                    Jsme vděční za Vaši přítomnost na našem velkém dni, nicméně pokud se rozhodnete pro svatební dar, uvítali bychom 
-                    finanční příspěvek. Jelikož spolu žijeme přes šest let, svatební výbavu jsme si za tu dobu nakoupili sami.
-                </p>
-
-            </details>
-
-
-        </div>
-        </div>
-    </section>
 
 </main>
 
