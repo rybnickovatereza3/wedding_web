@@ -22,7 +22,7 @@
       <!--p as paragraph-->
       <div class="hero-content">
         <h1 class = "hero-title">Tereza & Lukáš</h1>
-        <p class="eyebrow">nejúžasnější svatba roku</p>
+        <p class="eyebrow">svatba roku</p>
         <p class="date">19. června 2027</p>
       </div>
               <nav class="hero-nav">
@@ -40,14 +40,13 @@
 <section id="venue">
     <div class="container">
         <div class="section-header">
-            <h2>Místo</h2>
-            <p class="intro">Kde nás najdete:</p>
+            <h2>Obřad</h2>
         </div>
 
         <div class="detail-grid">
             <div class="detail-item">
                 <div class="detail-icon" >
-                    <img src="icons/calendar-blank-light.svg" alt="calendar" aria-hidden="true">
+                    <img src="icons/calendar-blank-light.svg" alt="" aria-hidden="true">
                 </div>
                 <div class="detail-text">
                     <p class="detail-label">Datum</p>
@@ -57,7 +56,7 @@
 
             <div class="detail-item">
                 <div class="detail-icon" aria-hidden="true">
-                    <img src="icons/map-pin-light.svg" alt="pin" aria-hidden="true">
+                    <img src="icons/map-pin-light.svg" alt="" aria-hidden="true">
                 </div>
                 <div class="detail-text">
                     <p class="detail-label">Místo</p>
@@ -67,7 +66,7 @@
 
             <div class="detail-item">
                 <div class="detail-icon" aria-hidden="true">
-                    <img src="icons/clock-light.svg" alt="calendar" aria-hidden="true">
+                    <img src="icons/clock-light.svg" alt="" aria-hidden="true">
                 </div>
                 <div class="detail-text">
                     <p class="detail-label">Začátek obřadu</p>
@@ -80,7 +79,8 @@
         <div class="venue-map">
             <!-- interactive map should be here -->
         </div>
-
+    </section>
+    
     <!-- Náš příběh -->
     <section id="story">
         <div class = "container">
@@ -109,7 +109,7 @@
     </section>
 
 
-</section>
+
 
     <!-- Program -->
 <section id="program">
@@ -180,9 +180,21 @@
     <section id="faq">
         <div class = "container">
             <div class = "section-header">
-                <h2>Zde budou užitečné věci</h2>
+                <h2>Doplňujicí informace</h2>
             </div>
         <div class="section-content">
+
+            <details class="faq-item">
+
+                <summary>Do kdy potvrdit účast?</summary>
+
+                <p>
+                    Od počtu lidí se nám odvíjí plánování cateringu, výzdoby, ale i celého programu. Proto Vás prosíme o potvrzení účasti co nejdříve, nejpozději 
+                    však do března 2027. Samozřejmě chápeme, že životu nelze poroučet, avšak v případě, že se nebudete moci účastnit, nám prosím dejte co nejdřívě vědět vyplněním 
+                    stejného formuláře (Jméno + zaškrtnout neúčast). Děkujeme za Vaši ohleduplnost.
+                </p>
+
+            </details>
 
             <details class="faq-item">
 
@@ -192,6 +204,28 @@
                     Parkování je v omezené kapacitě možné na místě vyznačeném za penzionem. Bude-li kapacita naplněna, je možné parkovat 
                     na parkovišti ke hradu Buchlov, které se nachází hned vedle penzionu. Parkovné je zde 50 Kč/den, je dobré na to myslet.
                 </p>
+
+            </details>
+
+            <details class="faq-item">
+
+                <summary>Jak je s ubytováním?</summary>
+
+                <p>
+                    Kapacita penzionu je omezená, proto prosím pochopte, že nelze na místě ubytovat všechny. Pár minut chůze od penionu se 
+                    nachází hotel Buchlov, budete-li mít zájem, je možné si zde rezervovat místo. Nicméně jelikož i zde bývají pořádané svatby, je nutné si místo 
+                    rezervovat s předstihem. Plno krásných možností ubytování nabízí nedaleké Buchlovice.
+                </p>
+            <details class="faq-item">
+
+                <summary>Jak je to s dopravou?</summary>
+
+                <p>
+                    Myslíme na to, že naše místo se nachází uprostřed luk a lesů. Pokud by byl větší zájem, mohli bychom zajistit několik koordinovaných hromadných
+                    převozů do Brna/Dražovic během dne. Případně by bylo možné dopravit Vás na místo ubytování. Dejte nám, prosím, vědět o vašich preferencích ve formuláři.
+                </p>
+
+            </details>
 
             </details>
 
@@ -226,7 +260,6 @@
     <div class="container">
         <div class="section-header">
             <h2>Potvrzení účasti</h2>
-            <p class="intro">Budeme moc rádi, když s námi tento den prožijete. Účast prosím potvrďte do konce tohoto roku.</p>
         </div>
 
         <form class="rsvp-form" action="https://script.google.com/macros/s/AKfycby7m7QDR_sa-hqVDszWVTwuxybuC4JrxDJ6GRhHrKS2HTrbvhW0bgabgAHlhUdmWXhW/exec" method="post" target="hidden_iframe">
