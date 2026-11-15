@@ -119,7 +119,6 @@ h2 {
     inset: 0;
     z-index: -1;
     background: url("images/chrpa1.png") left -2vw center / auto 95% no-repeat;
-    filter: brightness(0) saturate(100%) invert(33%) sepia(13%) saturate(560%) hue-rotate(54deg) brightness(90%) drop-shadow(-10px 10px 0 #a8b59b);
     pointer-events: none;
 }
 
@@ -132,7 +131,6 @@ h2 {
     height: 65%;
     z-index: -1;
     background: url("images/kytka.png") right bottom / contain no-repeat;
-    filter: brightness(0) saturate(100%) invert(33%) sepia(13%) saturate(560%) hue-rotate(54deg) brightness(90%) drop-shadow(-10px 10px 0 #a8b59b);
     pointer-events: none;
 }
 
@@ -265,6 +263,24 @@ main section {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
         url("images/prsten.jpeg") center 60% / cover no-repeat;
     filter: grayscale(100%);
+}
+
+#coord {
+    padding-top: 0;
+}
+
+.coordination-panel {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url("images/dress1.jpeg") center 40% / cover no-repeat;
+    filter: grayscale(100%);
+}
+
+.coordinator-contacts {
+    margin-top: var(--space-md);
+}
+
+.coordinator-contacts .detail-item {
+    align-items: center;
 }
 
 #faq,
@@ -772,6 +788,10 @@ fieldset label {
 }
 
 @media (max-width: 768px) {
+    .coordinator-contacts {
+        grid-template-columns: 1fr;
+    }
+
     .rsvp-form {
         grid-template-columns: 1fr;
     }
