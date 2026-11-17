@@ -788,8 +788,25 @@ fieldset label {
 }
 
 @media (max-width: 768px) {
-    .coordinator-contacts {
-        grid-template-columns: 1fr;
+    .detail-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: var(--space-xs);
+    }
+
+    .detail-text {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+    .hero {
+        min-height: 100vh;
+        min-height: 100svh;
+        padding-inline: var(--space-sm);
+    }
+
+    .hero::before {
+        background-position: left bottom;
+        background-size: min(42vw, 180px) auto;
     }
 
     .rsvp-form {
@@ -805,7 +822,12 @@ fieldset label {
     }
 
     .hero-title {
-        font-size: 4rem;
+        font-size: clamp(1.5rem, 7vw, 3rem);
+        white-space: nowrap;
+    }
+
+    .date {
+        font-size: clamp(2rem, 8vw, 3rem);
     }
 
     .hero-nav {
@@ -829,7 +851,4 @@ fieldset label {
         margin-top: var(--space-sm);
     }
 
-    .details-grid {
-        grid-template-columns: 1fr;
-    }
 }
