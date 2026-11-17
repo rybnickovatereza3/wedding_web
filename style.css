@@ -805,7 +805,7 @@ fieldset label {
     }
 
     .hero::before {
-        background-position: left bottom;
+        background-position: left top;
         background-size: min(42vw, 180px) auto;
     }
 
