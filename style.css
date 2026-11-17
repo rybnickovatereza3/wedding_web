@@ -805,8 +805,12 @@ fieldset label {
     }
 
     .hero::before {
-        background-position: left top;
-        background-size: min(42vw, 180px) auto;
+        background: url("images/kytky2.png") center / contain no-repeat;
+        opacity: 0.12;
+    }
+
+    .hero::after {
+        display: none;
     }
 
     .rsvp-form {
