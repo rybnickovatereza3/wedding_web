@@ -182,7 +182,15 @@ main section {
 }
 
 #venue .detail-item {
+    display: grid;
+    grid-template-columns: 4.6rem minmax(0, 1fr);
     align-items: center;
+    column-gap: var(--space-sm);
+    text-align: left;
+}
+
+#venue .detail-icon img[src*="map-pin"] {
+    transform: translateX(0.3rem);
 }
 
 #story {
@@ -473,7 +481,9 @@ main section {
 
 .program-time {
     margin: 0;
-    font-family: var(--font-body);
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-weight: 300;
     font-size: 1.8rem;
     color: var(--text);
 }
